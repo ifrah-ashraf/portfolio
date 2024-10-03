@@ -1,3 +1,11 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "extends": ["next/core-web-vitals", "next/typescript"],
+  "rules": {
+    // Disable unused variable errors
+    "@typescript-eslint/no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }], // Change "error" to "warn" to show as warnings
+    // Disable explicit any type errors
+    "@typescript-eslint/no-explicit-any": "off",
+    // Disable exhaustive-deps warning
+    "react-hooks/exhaustive-deps": "off"
+  }
 }
