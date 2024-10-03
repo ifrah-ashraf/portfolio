@@ -49,7 +49,7 @@ function Project() {
                     <StackIcon name="postgresql" />
                 </div>
 
-                <div className='flex justify-center items-center w-32 h-28 rounded-md backdrop-filter backdrop-blur-md shadow-lg'>
+                <div className='flex justify-center items-center w-32 h-28  bg-[#f7f3e8] rounded-md backdrop-filter backdrop-blur-md shadow-lg'>
                     <StackIcon name="prisma" />
                 </div>
 
@@ -75,7 +75,7 @@ function Project() {
                     <StackIcon name="linux" />
                 </div>
 
-                <div className='flex justify-center items-center w-32 h-28 rounded-md bg-gray-900 bg-opacity- backdrop-filter backdrop-blur-md shadow-lg'>
+                <div className='flex justify-center items-center w-32 h-28 rounded-md bg-[#f7f3e8] bg-opacity- backdrop-filter backdrop-blur-md shadow-lg'>
                     <StackIcon name="github" />
                 </div>
 
