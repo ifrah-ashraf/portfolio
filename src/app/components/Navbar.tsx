@@ -10,7 +10,7 @@ export default function Navbar() {
                         <a href="#project" className="hover:text-gray-300 transition text-lg font-semibold">Projects</a>
                         <a href="https://github.com/ifrah-ashraf/" target="_blank" className="hover:text-gray-300 transition"><FaGithub className="text-2xl" /></a>
                         <a href="https://www.linkedin.com/in/ifrah-ashraf-6579a7278/"  target="_blank" className="hover:text-gray-300 transition"><FaLinkedin className="text-2xl" /></a>
-                        <a href="#" className="hover:text-gray-300 transition"><FaXTwitter className="text-2xl" /></a>
+                        <a href="https://x.com/ifrah_ashraf24" target="_blank" className="hover:text-gray-300 transition"><FaXTwitter className="text-2xl" /></a>
                     </div>
                 </div>
             </div>

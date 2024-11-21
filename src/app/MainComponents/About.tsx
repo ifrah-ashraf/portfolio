@@ -21,15 +21,18 @@ function About() {
                 {/* About Section */}
                 <div className="flex flex-col md:flex-row items-center justify-between w-full mb-24"> {/* Adjusted from mb-12 to mb-8 */}
                     {/* Image Avatar */}
-                    <div className="mb-2 md:mb-0 md:mr-4"> {/* Adjusted mb-4 to mb-2 and md:mr-8 to md:mr-4 */}
-                        <Image
-                            src="/images/alex-suprun-ZHvM3XIOHoE-unsplash.jpg"
-                            alt="Your Avatar"
-                            width={192}
-                            height={192}
-                            className="rounded-full object-cover shadow-lg"
-                        />
+                    <div className="mb-2 md:mb-0 md:mr-4">
+                        <div className="w-52 h-52 rounded-full overflow-hidden shadow-lg"> {/* Ensure circular shape */}
+                            <Image
+                                src="/images/ai_1.png"
+                                alt="Profile Picture"
+                                width={208}
+                                height={208}
+                                className="object-cover"
+                            />
+                        </div>
                     </div>
+
 
                     {/* Text Effect Section */}
                     <div className="text-left max-w-2xl">
