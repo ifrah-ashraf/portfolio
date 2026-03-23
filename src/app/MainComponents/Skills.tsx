@@ -52,7 +52,7 @@ export default function Skills() {
                 </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/[0.06] rounded-2xl overflow-hidden border border-white/[0.06]">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {categories.map((cat, idx) => (
                     <motion.div
                         key={cat.label}
@@ -60,38 +60,44 @@ export default function Skills() {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.4, delay: idx * 0.08 }}
                         viewport={{ once: true }}
-                        className="bg-[#08080f] p-7 flex flex-col gap-5"
+                        className="relative rounded-xl border border-white/[0.07] bg-[#0b0b15] overflow-hidden group"
                     >
-                        <div>
-                            <p className="text-[11px] font-bold text-white/25 uppercase tracking-widest mb-1">
+                        <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-gradient-to-b from-violet-500/50 via-cyan-500/30 to-transparent" />
+
+                        <div className="px-6 pt-6 pb-5">
+                            <p className="text-[10px] font-bold text-white/25 uppercase tracking-widest mb-1">
                                 {cat.description}
                             </p>
-                            <h3 className="text-lg font-bold text-white">{cat.label}</h3>
+                            <h3 className="text-base font-semibold text-white/90">{cat.label}</h3>
                         </div>
 
-                        <div className="w-8 h-px bg-white/10" />
+                        <div className="mx-6 h-px bg-white/[0.06]" />
 
-                        {cat.asTags ? (
-                            <div className="flex flex-wrap gap-2">
-                                {cat.items.map((tag) => (
-                                    <span
-                                        key={tag}
-                                        className="text-xs font-medium text-white/55 bg-white/[0.05] border border-white/[0.08] px-2.5 py-1 rounded-md"
-                                    >
-                                        {tag}
-                                    </span>
-                                ))}
-                            </div>
-                        ) : (
-                            <ul className="flex flex-col gap-3">
-                                {cat.items.map((item) => (
-                                    <li key={item} className="flex items-start gap-2.5">
-                                        <span className="mt-2 w-1 h-1 rounded-full bg-white/20 flex-shrink-0" />
-                                        <span className="text-sm text-white/55 leading-relaxed">{item}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        )}
+                        <div className="px-6 py-5">
+                            {cat.asTags ? (
+                                <div className="flex flex-wrap gap-2">
+                                    {cat.items.map((tag) => (
+                                        <span
+                                            key={tag}
+                                            className="text-xs text-white/50 bg-white/[0.04] border border-white/[0.07] px-2.5 py-1 rounded-md font-medium"
+                                        >
+                                            {tag}
+                                        </span>
+                                    ))}
+                                </div>
+                            ) : (
+                                <ul className="flex flex-col gap-2.5">
+                                    {cat.items.map((item) => (
+                                        <li key={item} className="flex items-center gap-3">
+                                            <span className="w-1 h-1 rounded-full bg-violet-400/40 flex-shrink-0" />
+                                            <span className="text-sm text-white/50">{item}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
+                        </div>
+
+                        <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none ring-1 ring-white/10" />
                     </motion.div>
                 ))}
             </div>
