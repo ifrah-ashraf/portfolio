@@ -1,8 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
 
 const roles = [
     "Full Stack Developer",
@@ -48,7 +46,7 @@ export default function Hero() {
 
                         <div className="h-9 mb-6 overflow-hidden">
                             <p
-                                className="text-xl md:text-2xl font-semibold text-violet-300 transition-all duration-400"
+                                className="text-xl md:text-2xl font-semibold text-violet-300"
                                 style={{
                                     opacity: visible ? 1 : 0,
                                     transform: visible ? 'translateY(0)' : 'translateY(-10px)',
@@ -59,13 +57,13 @@ export default function Hero() {
                             </p>
                         </div>
 
-                        <p className="text-white/60 text-lg leading-relaxed max-w-xl mb-10 text-center lg:text-left">
+                        <p className="text-white/55 text-lg leading-relaxed max-w-xl mb-10 text-center lg:text-left">
                             Engineer driven by curiosity and first principles. I build full-stack systems,
                             autonomous AI agents, and anything that solves real problems from the ground up.
                             Started with C, never stopped exploring.
                         </p>
 
-                        <div className="flex flex-wrap gap-4 mb-10 justify-center lg:justify-start">
+                        <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
                             <a
                                 href="#projects"
                                 className="px-6 py-3 rounded-xl font-semibold text-sm bg-gradient-to-r from-violet-600 to-cyan-500 text-white hover:from-violet-500 hover:to-cyan-400 transition-all duration-300 shadow-lg shadow-violet-500/25 hover:shadow-violet-500/40 hover:-translate-y-0.5"
@@ -74,27 +72,10 @@ export default function Hero() {
                             </a>
                             <a
                                 href="#blogs"
-                                className="px-6 py-3 rounded-xl font-semibold text-sm border border-white/10 text-white/80 hover:text-white hover:border-white/30 hover:bg-white/5 transition-all duration-300"
+                                className="px-6 py-3 rounded-xl font-semibold text-sm border border-white/10 text-white/70 hover:text-white hover:border-white/25 hover:bg-white/5 transition-all duration-300"
                             >
                                 Read Blogs
                             </a>
-                        </div>
-
-                        <div className="flex items-center gap-4 text-white/40">
-                            <a href="https://github.com/ifrah-ashraf/" target="_blank" rel="noopener noreferrer"
-                               className="hover:text-white transition-colors duration-200 hover:-translate-y-0.5 transform">
-                                <FaGithub className="text-2xl" />
-                            </a>
-                            <a href="https://www.linkedin.com/in/ifrah-ashraf-6579a7278/" target="_blank" rel="noopener noreferrer"
-                               className="hover:text-white transition-colors duration-200 hover:-translate-y-0.5 transform">
-                                <FaLinkedin className="text-2xl" />
-                            </a>
-                            <a href="https://x.com/ifrah_ashraf24" target="_blank" rel="noopener noreferrer"
-                               className="hover:text-white transition-colors duration-200 hover:-translate-y-0.5 transform">
-                                <FaXTwitter className="text-2xl" />
-                            </a>
-                            <div className="w-px h-5 bg-white/10 mx-1" />
-                            <span className="text-sm text-white/30">India · CS Engineer</span>
                         </div>
                     </div>
 
@@ -114,11 +95,11 @@ export default function Hero() {
                             </div>
 
                             <div className="absolute -bottom-3 -right-3 bg-[#0f0f1a] border border-white/10 rounded-xl px-3 py-1.5 text-xs font-medium text-cyan-400 backdrop-blur-sm">
-                                🛠 Building in Public
+                                Building in Public
                             </div>
 
                             <div className="absolute -top-3 -left-3 bg-[#0f0f1a] border border-white/10 rounded-xl px-3 py-1.5 text-xs font-medium text-violet-400 backdrop-blur-sm">
-                                ⚡ Full Stack
+                                Full Stack
                             </div>
                         </div>
                     </div>
