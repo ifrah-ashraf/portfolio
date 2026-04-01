@@ -26,7 +26,7 @@ const categories = [
         ],
     },
     {
-        label: "Stack",
+        label: "Tech Stack",
         description: "What I use",
         items: [
             "Go", "Node.js", "Python", "TypeScript",
