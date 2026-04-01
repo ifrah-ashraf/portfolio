@@ -5,12 +5,11 @@ const nextConfig = {
         {
           protocol: 'https',
           hostname: 'images.unsplash.com',
-          port: '', // No port needed if it's the default (443 for https)
-          pathname: '/**', // Allow all paths under images.unsplash.com
+          port: '',
+          pathname: '/**',
         },
       ],
     },
   };
   
   export default nextConfig;
-  
