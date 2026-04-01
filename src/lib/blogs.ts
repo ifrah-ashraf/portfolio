@@ -12,7 +12,7 @@ export type Blog = {
 };
 
 export const staticBlogs: Blog[] = [
-  {
+ /*  {
     id: 'external-1',
     type: 'external',
     title: 'Building Multithreaded Scrapers with Go Routines',
@@ -22,16 +22,16 @@ export const staticBlogs: Blog[] = [
     reading_time: 6,
     external_url: 'https://medium.com',
     platform: 'Medium',
-  },
+  }, */
   {
     id: 'external-2',
     type: 'external',
-    title: 'From Zero to Full Stack: My Journey',
-    excerpt: "A first-principles approach to learning software engineering — what worked, what didn't, and what I'd do differently.",
-    tags: ['Career', 'Learning', 'Web Dev'],
+    title: 'From Documents to Answers: How RAG Works',
+    excerpt: "Learned how basic cosine similarity used in vector search",
+    tags: [ 'Learning', 'vector search'],
     published_at: '2024-08-20',
     reading_time: 8,
-    external_url: 'https://dev.to',
+    external_url: 'https://dev.to/ifrah_ashraf_a3600e049d51/from-documents-to-answers-how-rag-works-ofc',
     platform: 'Dev.to',
   },
 ];
