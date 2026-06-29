@@ -10,19 +10,37 @@ const roles = [
     "Systems Engineer",
 ];
 
+const photos = [
+    "/images/ifrah_formal.jpeg",
+    "/images/ifrah_workspace.jpeg",
+];
+
 export default function Hero() {
     const [roleIndex, setRoleIndex] = useState(0);
-    const [visible, setVisible] = useState(true);
+    const [roleVisible, setRoleVisible] = useState(true);
+    const [photoIndex, setPhotoIndex] = useState(0);
+    const [photoFading, setPhotoFading] = useState(false);
 
     useEffect(() => {
-        const interval = setInterval(() => {
-            setVisible(false);
+        const roleInterval = setInterval(() => {
+            setRoleVisible(false);
             setTimeout(() => {
                 setRoleIndex((i) => (i + 1) % roles.length);
-                setVisible(true);
+                setRoleVisible(true);
             }, 400);
         }, 2800);
-        return () => clearInterval(interval);
+        return () => clearInterval(roleInterval);
+    }, []);
+
+    useEffect(() => {
+        const photoInterval = setInterval(() => {
+            setPhotoFading(true);
+            setTimeout(() => {
+                setPhotoIndex((i) => (i + 1) % photos.length);
+                setPhotoFading(false);
+            }, 800);
+        }, 35000);
+        return () => clearInterval(photoInterval);
     }, []);
 
     return (
@@ -48,8 +66,8 @@ export default function Hero() {
                             <p
                                 className="text-xl md:text-2xl font-semibold text-violet-300"
                                 style={{
-                                    opacity: visible ? 1 : 0,
-                                    transform: visible ? 'translateY(0)' : 'translateY(-10px)',
+                                    opacity: roleVisible ? 1 : 0,
+                                    transform: roleVisible ? 'translateY(0)' : 'translateY(-10px)',
                                     transition: 'opacity 0.4s ease, transform 0.4s ease',
                                 }}
                             >
@@ -58,9 +76,9 @@ export default function Hero() {
                         </div>
 
                         <p className="text-white/55 text-lg leading-relaxed max-w-xl mb-10 text-center lg:text-left">
-                            Engineer driven by curiosity and first principles. I build full-stack systems,
-                            autonomous AI agents, and anything that solves real problems from the ground up.
-                            Started with C, never stopped exploring.
+                            I believe strong engineering starts with understanding the problem, not choosing the technology.
+                            I enjoy breaking down complex systems, reasoning through trade-offs, and building scalable
+                            backend platforms, AI agents, and full-stack applications that solve real-world problems.
                         </p>
 
                         <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
@@ -81,26 +99,23 @@ export default function Hero() {
 
                     <div className="order-1 lg:order-2 flex-shrink-0">
                         <div className="relative w-56 h-56 lg:w-72 lg:h-72">
-                            <div className="glow-border rounded-full p-0.5">
+                            <div className="glow-border rounded-full p-0.5 w-full h-full">
                                 <div className="w-full h-full rounded-full overflow-hidden bg-[#0f0f1a]">
                                     <Image
-                                        src="/images/ai_1.png"
+                                        src={photos[photoIndex]}
                                         alt="Ifrah Ashraf"
                                         width={288}
                                         height={288}
-                                        className="object-cover w-full h-full"
+                                        className="object-cover object-top w-full h-full"
+                                        style={{
+                                            opacity: photoFading ? 0 : 1,
+                                            transition: 'opacity 0.8s ease-in-out',
+                                        }}
                                         priority
                                     />
                                 </div>
                             </div>
 
-                            <div className="absolute -bottom-3 -right-3 bg-[#0f0f1a] border border-white/10 rounded-xl px-3 py-1.5 text-xs font-medium text-cyan-400 backdrop-blur-sm">
-                                Building in Public
-                            </div>
-
-                            <div className="absolute -top-3 -left-3 bg-[#0f0f1a] border border-white/10 rounded-xl px-3 py-1.5 text-xs font-medium text-violet-400 backdrop-blur-sm">
-                                Full Stack
-                            </div>
                         </div>
                     </div>
                 </div>
