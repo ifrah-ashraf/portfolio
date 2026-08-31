@@ -2,11 +2,10 @@ import React from 'react';
 
 const Footer: React.FC = () => {
     return (
-        <footer className="w-full border-t border-white/5 mt-10">
-            <div className="max-w-6xl mx-auto px-6 py-8 flex items-center justify-center">
-                <p className="text-white/20 text-sm">
-                    © {new Date().getFullYear()} Ifrah Ashraf. Built with Next.js.
-                </p>
+        <footer className="w-full">
+            <div className="max-w-6xl mx-auto flex flex-col gap-2 px-6 py-10 text-xs text-[#f1eadb]/35 md:flex-row md:items-center md:justify-between">
+                <p>© {new Date().getFullYear()} Ifrah Ashraf</p>
+                <p>Built with intent.</p>
             </div>
         </footer>
     );
