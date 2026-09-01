@@ -1,18 +1,14 @@
-import {  useEffect } from 'react';
+"use client";
+import { useEffect } from 'react';
 
 function Theme() {
-
-
-
   useEffect(() => {
-   
-    const darkTheme = 'dark'
-    localStorage.setItem('theme', darkTheme)
-    document.documentElement.classList.add(darkTheme)
+    const darkTheme = 'dark';
+    localStorage.setItem('theme', darkTheme);
+    document.documentElement.classList.add(darkTheme);
   }, []);
 
-  return null
-
+  return null;
 }
 
 export default Theme;

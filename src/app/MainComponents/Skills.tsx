@@ -3,8 +3,9 @@ import { motion } from "framer-motion";
 
 const categories = [
     {
+        number: "01",
         label: "Engineering",
-        description: "What I build",
+        description: "Build",
         items: [
             "Full Stack Development",
             "AI / Agent Systems",
@@ -15,8 +16,9 @@ const categories = [
         ],
     },
     {
+        number: "02",
         label: "Approach",
-        description: "How I think",
+        description: "Think",
         items: [
             "First Principles Thinking",
             "Systems Design",
@@ -26,8 +28,9 @@ const categories = [
         ],
     },
     {
+        number: "03",
         label: "Tech Stack",
-        description: "What I use",
+        description: "Use",
         items: [
             "Go", "Node.js", "Python", "TypeScript",
             "Next.js", "React",
@@ -41,63 +44,55 @@ const categories = [
 
 export default function Skills() {
     return (
-        <section id="skills" className="w-full max-w-6xl mx-auto px-6 py-20">
-            <div className="mb-14 text-center">
-                <p className="text-violet-400 text-sm font-semibold tracking-widest uppercase mb-3">What I bring</p>
-                <h2 className="text-4xl md:text-5xl font-extrabold text-white">
-                    Skills &amp; <span className="gradient-text">Expertise</span>
-                </h2>
-                <p className="text-white/35 mt-4 text-base max-w-xl mx-auto">
-                    I don&apos;t just write code — I architect solutions and think from first principles.
+        <section id="skills" className="w-full max-w-6xl mx-auto px-6 py-20 md:py-24">
+            <div className="mb-12 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+                <div>
+                    <p className="section-kicker mb-3">03 / Capabilities</p>
+                    <h2 className="font-serif text-4xl md:text-5xl tracking-tight text-[#f1eadb]">How I work</h2>
+                </div>
+                <p className="max-w-md text-sm leading-relaxed text-[#f1eadb]/50">
+                    A practical engineering practice: understand the system, make the trade-offs visible, and deliver with care.
                 </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                {categories.map((cat, idx) => (
+            <div className="grid grid-cols-1 gap-0 border-t border-[#f1eadb]/15 md:grid-cols-3 md:divide-x md:divide-[#f1eadb]/15">
+                {categories.map((cat) => (
                     <motion.div
                         key={cat.label}
-                        initial={{ opacity: 0, y: 16 }}
+                        initial={{ opacity: 0, y: 12 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.4, delay: idx * 0.08 }}
+                        transition={{ duration: 0.35 }}
                         viewport={{ once: true }}
-                        className="relative rounded-xl border border-white/[0.07] bg-[#0b0b15] overflow-hidden group"
+                        className="border-b border-[#f1eadb]/15 px-1 py-7 md:border-b-0 md:px-7 md:first:pl-0 md:last:pr-0"
                     >
-                        <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-gradient-to-b from-violet-500/50 via-cyan-500/30 to-transparent" />
-
-                        <div className="px-6 pt-6 pb-5">
-                            <p className="text-[10px] font-bold text-white/25 uppercase tracking-widest mb-1">
-                                {cat.description}
-                            </p>
-                            <h3 className="text-base font-semibold text-white/90">{cat.label}</h3>
+                        <div className="flex items-start justify-between gap-4">
+                            <div>
+                                <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#d8c39b]">{cat.description}</p>
+                                <h3 className="text-lg font-semibold text-[#f1eadb]">{cat.label}</h3>
+                            </div>
+                            <span className="font-mono text-xs text-[#f1eadb]/30">{cat.number}</span>
                         </div>
 
-                        <div className="mx-6 h-px bg-white/[0.06]" />
-
-                        <div className="px-6 py-5">
+                        <div className="mt-7">
                             {cat.asTags ? (
-                                <div className="flex flex-wrap gap-2">
+                                <div className="flex flex-wrap gap-x-2 gap-y-2">
                                     {cat.items.map((tag) => (
-                                        <span
-                                            key={tag}
-                                            className="text-xs text-white/50 bg-white/[0.04] border border-white/[0.07] px-2.5 py-1 rounded-md font-medium"
-                                        >
+                                        <span key={tag} className="text-xs text-[#f1eadb]/60">
                                             {tag}
                                         </span>
                                     ))}
                                 </div>
                             ) : (
-                                <ul className="flex flex-col gap-2.5">
+                                <ul className="flex flex-col gap-2">
                                     {cat.items.map((item) => (
-                                        <li key={item} className="flex items-center gap-3">
-                                            <span className="w-1 h-1 rounded-full bg-violet-400/40 flex-shrink-0" />
-                                            <span className="text-sm text-white/50">{item}</span>
+                                        <li key={item} className="flex items-center gap-3 text-sm text-[#f1eadb]/55">
+                                            <span className="h-px w-3 bg-[#d8c39b]/70" />
+                                            <span>{item}</span>
                                         </li>
                                     ))}
                                 </ul>
                             )}
                         </div>
-
-                        <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none ring-1 ring-white/10" />
                     </motion.div>
                 ))}
             </div>
