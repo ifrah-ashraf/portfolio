@@ -12,24 +12,13 @@ export type Blog = {
 };
 
 export const staticBlogs: Blog[] = [
- /*  {
-    id: 'external-1',
-    type: 'external',
-    title: 'Building Multithreaded Scrapers with Go Routines',
-    excerpt: 'How I leveraged goroutines to build a high-performance web scraper that processes thousands of URLs concurrently.',
-    tags: ['Go', 'Concurrency', 'Performance'],
-    published_at: '2024-10-15',
-    reading_time: 6,
-    external_url: 'https://medium.com',
-    platform: 'Medium',
-  }, */
   {
-    id: 'external-2',
+    id: 'external-3',
     type: 'external',
     title: 'From Documents to Answers: How RAG Works',
-    excerpt: "Learned how basic cosine similarity used in vector search",
-    tags: [ 'Learning', 'vector search'],
-    published_at: '2024-08-20',
+    excerpt: 'A practical look at how documents become searchable context, and how cosine similarity helps retrieve a useful answer.',
+    tags: ['Learning', 'Vector Search'],
+    published_at: '2026-02-22',
     reading_time: 8,
     external_url: 'https://dev.to/ifrah_ashraf_a3600e049d51/from-documents-to-answers-how-rag-works-ofc',
     platform: 'Dev.to',

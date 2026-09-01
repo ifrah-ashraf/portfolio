@@ -1,0 +1,1 @@
+- [GitHub repository sync](github-sync.md) — compare remote state before reconciling a checkout that may already contain local Replit work.

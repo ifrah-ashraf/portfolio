@@ -3,162 +3,96 @@ import { motion } from "framer-motion";
 
 const experiences = [
     {
+        role: "Software Engineer",
+        company: "Wipro",
+        period: "Jul 2026 — Present",
+        current: true,
+        description:
+            "Joined Wipro as a full-time software engineer following its acquisition of Harman Connected Services. Currently completing the training programme and preparing to contribute at production scale.",
+        highlights: [
+            "Building depth across Wipro’s engineering practices and delivery standards",
+            "Translating training into reliable, production-ready software habits",
+        ],
+        tags: ["Software Engineering", "Training", "Wipro"],
+    },
+    {
         role: "Agentic AI Data Engineer Intern",
         company: "Harman Connected Services",
-        period: "Jan 2026 — Present",
-        current: true,
-        accent: "#10b981",
-        accentMuted: "#10b98120",
-        tagBorder: "#10b98125",
+        period: "Jan 2026 — Jun 2026",
+        current: false,
         description:
-            "Working in the Data Engineering team building a full-fledged multi-agent system using LangGraph. Focus on the supervisor layer — designing how the supervisor coordinates multiple sub-agents, manages handoffs, and incorporates human-in-the-loop for critical decisions.",
+            "Completed an internship in the Data Engineering team, building a multi-agent system with LangGraph and focusing on the supervisor layer.",
         highlights: [
-            "Designing supervisor coordination logic for multi-agent pipelines using LangGraph",
-            "Integrating MCP (Model Context Protocol) server for agent tool access",
-            "Implementing human-in-the-loop checkpoints for critical data decisions",
-            "Building agentic workflows that automate end-to-end data engineering tasks",
+            "Designed supervisor coordination logic for multi-agent pipelines using LangGraph",
+            "Integrated MCP server tooling and human-in-the-loop checkpoints",
+            "Built agentic workflows to automate end-to-end data engineering tasks",
         ],
-        tags: ["LangGraph", "MCP", "Multi-Agent", "Python", "LLMs", "Data Engineering"],
+        tags: ["LangGraph", "MCP", "Multi-Agent", "Python", "Data Engineering"],
     },
     {
         role: "Full Stack Developer Intern",
         company: "Poster.fun",
         period: "Aug 2025 — Dec 2025",
         current: false,
-        accent: "#818cf8",
-        accentMuted: "#818cf815",
-        tagBorder: "#818cf822",
         description:
-            "Built and shipped production features for a design-generation platform. Owned the AI image pipeline and authentication infrastructure end-to-end.",
+            "Built and shipped production features for a design-generation platform, owning the AI image pipeline and authentication infrastructure end-to-end.",
         highlights: [
-            "Reduced AI image API response time from 2 min → 15 sec by offloading storage to async Redis jobs via BullMQ",
-            "Integrated social logins via Privy — X (Twitter) and OAuth services",
-            "Architected async job queue system for non-blocking AI generation workflows",
-            "Shipped full-stack features across frontend and backend in a fast-paced startup",
+            "Reduced AI image API response time from 2 min → 15 sec with async Redis jobs",
+            "Architected non-blocking generation workflows with BullMQ",
+            "Shipped full-stack features across frontend and backend",
         ],
-        tags: ["Next.js", "Node.js", "Redis", "BullMQ", "Privy", "OAuth", "TypeScript"],
+        tags: ["Next.js", "Node.js", "Redis", "BullMQ", "TypeScript"],
     },
 ];
 
 export default function Experience() {
     return (
-        <section id="experience" className="w-full max-w-5xl mx-auto px-6 py-20">
-            <div className="mb-16 text-center">
-                <p className="text-violet-400 text-sm font-semibold tracking-widest uppercase mb-3">Where I&apos;ve worked</p>
-                <h2 className="text-4xl md:text-5xl font-extrabold text-white">
-                    Work <span className="gradient-text">Experience</span>
-                </h2>
-                <p className="text-white/40 mt-4 text-base max-w-xl mx-auto">
-                    Real-world engineering at fast-moving companies — shipped code, solved hard problems.
+        <section id="experience" className="w-full max-w-6xl mx-auto px-6 py-20 md:py-24">
+            <div className="mb-12 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+                <div>
+                    <p className="section-kicker mb-3">02 / Experience</p>
+                    <h2 className="font-serif text-4xl md:text-5xl tracking-tight text-[#f1eadb]">Where I&apos;ve worked</h2>
+                </div>
+                <p className="max-w-md text-sm leading-relaxed text-[#f1eadb]/50">
+                    From shipping product features to entering a full-time engineering role, each step has increased my ownership.
                 </p>
             </div>
 
-            <div className="relative">
-                <div className="absolute left-[7px] top-3 bottom-3 w-px bg-gradient-to-b from-emerald-500/60 via-white/10 to-violet-500/30" />
-
-                <div className="flex flex-col gap-12">
-                    {experiences.map((exp, idx) => (
-                        <motion.div
-                            key={exp.company}
-                            initial={{ opacity: 0, x: -10 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.4, delay: idx * 0.08 }}
-                            viewport={{ once: true }}
-                            className="relative pl-10"
-                        >
-                            <div className="absolute left-0 top-1 flex items-center justify-center">
-                                {exp.current ? (
-                                    <span className="relative flex h-[15px] w-[15px]">
-                                        <span
-                                            className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-50"
-                                            style={{ backgroundColor: exp.accent }}
-                                        />
-                                        <span
-                                            className="relative inline-flex rounded-full h-[15px] w-[15px] border-2"
-                                            style={{ backgroundColor: exp.accent, borderColor: '#05050a' }}
-                                        />
-                                    </span>
-                                ) : (
-                                    <span
-                                        className="h-[15px] w-[15px] rounded-full border-2 flex items-center justify-center"
-                                        style={{ borderColor: exp.accent, backgroundColor: '#05050a' }}
-                                    >
-                                        <span
-                                            className="h-[6px] w-[6px] rounded-full"
-                                            style={{ backgroundColor: exp.accent }}
-                                        />
-                                    </span>
-                                )}
-                            </div>
-
-                            <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 mb-1">
-                                <span
-                                    className="text-xs font-semibold px-2.5 py-0.5 rounded-full border"
-                                    style={{
-                                        color: exp.accent,
-                                        backgroundColor: exp.accentMuted,
-                                        borderColor: exp.tagBorder,
-                                    }}
-                                >
-                                    {exp.current ? "● Current" : "✓ Completed"}
-                                </span>
-                                <span className="text-xs text-white/30 font-mono">{exp.period}</span>
-                            </div>
-
-                            <h3 className="text-xl font-bold text-white leading-snug mt-2">{exp.role}</h3>
-                            <p className="text-sm font-medium mt-0.5 mb-4" style={{ color: `${exp.accent}bb` }}>
-                                {exp.company}
+            <div className="border-t border-[#f1eadb]/15">
+                {experiences.map((exp, idx) => (
+                    <motion.article
+                        key={`${exp.company}-${exp.role}`}
+                        initial={{ opacity: 0, y: 12 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.35, delay: idx * 0.05 }}
+                        viewport={{ once: true }}
+                        className="grid gap-5 border-b border-[#f1eadb]/15 py-8 md:grid-cols-[90px_190px_1fr] md:gap-8"
+                    >
+                        <div className="font-mono text-sm text-[#d8c39b]">0{idx + 1}</div>
+                        <div>
+                            <p className="text-sm font-semibold text-[#f1eadb]">{exp.company}</p>
+                            <p className="mt-1 text-xs text-[#f1eadb]/40">{exp.period}</p>
+                            <p className={`mt-3 text-[10px] font-semibold uppercase tracking-[0.18em] ${exp.current ? "text-[#d8c39b]" : "text-[#f1eadb]/35"}`}>
+                                {exp.current ? "Current role" : "Completed"}
                             </p>
-
-                            <p className="text-sm text-white/50 leading-relaxed mb-5 max-w-2xl">
-                                {exp.description}
-                            </p>
-
-                            <div
-                                className="rounded-xl p-4 border mb-5 max-w-2xl"
-                                style={{
-                                    backgroundColor: `${exp.accent}06`,
-                                    borderColor: `${exp.accent}18`,
-                                }}
-                            >
-                                <p className="text-[10px] font-bold text-white/20 uppercase tracking-widest mb-3">Key Contributions</p>
-                                <ul className="flex flex-col gap-2">
-                                    {exp.highlights.map((point) => (
-                                        <li key={point} className="flex items-start gap-2.5 text-sm text-white/60">
-                                            <svg
-                                                className="w-3.5 h-3.5 mt-0.5 flex-shrink-0"
-                                                style={{ color: exp.accent }}
-                                                fill="none"
-                                                viewBox="0 0 24 24"
-                                                stroke="currentColor"
-                                                strokeWidth={2.5}
-                                            >
-                                                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4" />
-                                            </svg>
-                                            {point}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-
-                            <div className="flex flex-wrap gap-2">
-                                {exp.tags.map((tag) => (
-                                    <span
-                                        key={tag}
-                                        className="text-[11px] font-medium px-2.5 py-1 rounded-md border"
-                                        style={{
-                                            color: `${exp.accent}cc`,
-                                            backgroundColor: `${exp.accent}0c`,
-                                            borderColor: `${exp.accent}20`,
-                                        }}
-                                    >
-                                        {tag}
-                                    </span>
+                        </div>
+                        <div className="max-w-3xl">
+                            <h3 className="text-xl font-semibold tracking-tight text-[#f1eadb]">{exp.role}</h3>
+                            <p className="mt-3 text-sm leading-relaxed text-[#f1eadb]/55">{exp.description}</p>
+                            <ul className="mt-5 grid gap-2 text-sm text-[#f1eadb]/60">
+                                {exp.highlights.map((point) => (
+                                    <li key={point} className="flex gap-3">
+                                        <span className="mt-2 h-px w-3 shrink-0 bg-[#d8c39b]" />
+                                        <span>{point}</span>
+                                    </li>
                                 ))}
+                            </ul>
+                            <div className="mt-5 flex flex-wrap gap-x-3 gap-y-1.5 text-xs text-[#f1eadb]/35">
+                                {exp.tags.map((tag) => <span key={tag}>{tag}</span>)}
                             </div>
-                        </motion.div>
-                    ))}
-                </div>
+                        </div>
+                    </motion.article>
+                ))}
             </div>
         </section>
     );
