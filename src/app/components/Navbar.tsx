@@ -30,8 +30,7 @@ export default function Navbar() {
                             <a href="#experience" className="hover:text-[#f1eadb] transition-colors duration-200">Experience</a>
                             <a href="#projects" className="hover:text-[#f1eadb] transition-colors duration-200">Work</a>
                             <a href="#blogs" className="hover:text-[#f1eadb] transition-colors duration-200">Writing</a>
-                            <a href="https://www.blotters.dev/" className="hover:text-[#f1eadb] transition-colors duration-200">Logbook</a>
-                        </div>
+                            <a href="https://www.blotters.dev/" target="_blank" rel="noopener noreferrer" className="hover:text-[#f1eadb] transition-colors duration-200">Logbook</a>
 
                         <div className="flex items-center gap-3 text-[#f1eadb]/45">
                             <a href="https://github.com/ifrah-ashraf/" target="_blank" rel="noopener noreferrer"
